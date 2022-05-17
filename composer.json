@@ -1,0 +1,43 @@
+{
+    "name": "farhadhp/simple-todo",
+    "description": "A simple todo package for laravel",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Farhadhp\\SimpleTodo\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Farhadhp\\SimpleTodo\\Tests\\": "tests/",
+            "Farhadhp\\SimpleTodo\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Farhad Hassan Pour",
+            "email": "farhadhp.ir@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SimpleToDoServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.24",
+        "laravel/legacy-factories": "^1.0.4",
+        "nunomaduro/collision": "^5.10"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ],
+        "test": "phpunit"
+    },
+    "require": {
+        "doctrine/dbal": "^3.3"
+    }
+}
